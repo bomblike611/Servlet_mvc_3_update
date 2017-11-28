@@ -29,11 +29,13 @@ public class MemberDAO {
 	}
 	
 	//login====================================================================
-	public MemberDTO login(String id) throws Exception{
+	public MemberDTO login(MemberDTO mDTO) throws Exception{
 			Connection con=DBconnector.getConnect();
-			String sql="select * from member where id=?";
+			String sql="select * from member where id=? and pw=? and job=?";
 			PreparedStatement st=con.prepareStatement(sql);
-			st.setString(1, id);
+			st.setString(1, mDTO.getId());
+			st.setString(2, mDTO.getPw());
+			st.setString(3, mDTO.getJob());
 			ResultSet rs=st.executeQuery();
 			MemberDTO memberDTO=null;
 			if(rs.next()) {

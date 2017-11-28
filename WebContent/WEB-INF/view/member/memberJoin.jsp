@@ -41,7 +41,7 @@ display: none;
 <p>EMAIL : <input type="email" name="email"></p>
 <p>PHONE : <input type="text" name="phone"></p>
 <p>AGE : <input type="number" name="age"></p>
-<p>JOB : T<input type="radio" name="job" value="T" class="job">S<input type="radio" name="job" value="S" class="job"></p>
+<p>JOB : T<input type="radio" name="job" value="T" class="job" checked="checked">S<input type="radio" name="job" value="S" class="job"></p>
 <div id="S">
 <p>GRADE : <input type="number" name="grade"></p>
 <p>ADDR : <input type="text" name="addr"></p>

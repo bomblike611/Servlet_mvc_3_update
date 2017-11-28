@@ -25,11 +25,12 @@ public class TeacherDAO {
 		}
 		
 		//login====================================================================
-		public TeacherDTO login(String id) throws Exception{
+		public TeacherDTO login(String id,String pw) throws Exception{
 			Connection con=DBconnector.getConnect();
-			String sql="select * from teacher where id=?";
+			String sql="select * from teacher where id=? and pw=?";
 			PreparedStatement st=con.prepareStatement(sql);
 			st.setString(1, id);
+			st.setString(2, pw);
 			ResultSet rs=st.executeQuery();
 			TeacherDTO teacherDTO=null;
 			if(rs.next()) {
