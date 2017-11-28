@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="./notice/noticeList.notice">Notice List</a>
-	<a href="./qna/qnaList.qna">Qna List</a>
-	<a href="./member/memberLogin.member">Login</a>
-	<a href="./member/memberJoin.member">Join</a>
+
 </body>
 </html>
