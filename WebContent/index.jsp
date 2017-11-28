@@ -9,5 +9,6 @@
 <body>
 	<a href="./notice/noticeList.notice">Notice List</a>
 	<a href="./qna/qnaList.qna">Qna List</a>
+	<a href="./member.memberLogin.member">Login</a>
 </body>
 </html>

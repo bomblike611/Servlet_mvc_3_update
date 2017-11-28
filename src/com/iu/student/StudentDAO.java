@@ -2,6 +2,7 @@ package com.iu.student;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import com.iu.util.DBconnector;
 
@@ -22,6 +23,23 @@ public class StudentDAO {
 		}
 		
 		//login====================================================================
+		public StudentDTO login(String id) throws Exception{
+			Connection con=DBconnector.getConnect();
+			String sql="select * from student where id=?";
+			PreparedStatement st=con.prepareStatement(sql);
+			st.setString(1, id);
+			ResultSet rs=st.executeQuery();
+			StudentDTO studentDTO=null;
+			if(rs.next()) {
+				studentDTO=new StudentDTO();
+				studentDTO.setId(rs.getString("id"));
+				studentDTO.setAddr(rs.getString("addr"));
+				studentDTO.setGrade(rs.getInt("grade"));
+				studentDTO.setTid(rs.getString("tid"));
+			}
+			DBconnector.disConnect(rs, st, con);
+			return studentDTO;
+		}
 		//update===================================================================
 		//delete===================================================================
 	

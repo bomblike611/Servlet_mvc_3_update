@@ -2,7 +2,7 @@ package com.iu.student;
 
 import com.iu.member.MemberDTO;
 
-public class StudentDTO extends MemberDTO{
+public class StudentDTO {
 	private String id;
 	private int grade;
 	private String tid;
