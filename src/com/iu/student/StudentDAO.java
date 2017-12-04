@@ -25,10 +25,9 @@ public class StudentDAO {
 		//login====================================================================
 		public StudentDTO login(String id,String pw) throws Exception{
 			Connection con=DBconnector.getConnect();
-			String sql="select * from student where id=? and pw=?";
+			String sql="select * from student where id=?";
 			PreparedStatement st=con.prepareStatement(sql);
 			st.setString(1, id);
-			st.setString(2, pw);
 			ResultSet rs=st.executeQuery();
 			StudentDTO studentDTO=null;
 			if(rs.next()) {
